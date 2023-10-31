@@ -6,16 +6,21 @@ function ClimateStats() {
 
   const { climateTemperature, setClimateTemperature, climateHumidity, setClimateHumidity } = useClimateContext();
 
-  const { currentTemperature, setCurrentTemperature } = useState(50);
+  const [currentTemperature, setCurrentTemperature] = useState(50);
+  // debugger
 
+  
   useEffect(() => {
-    setInterval(() => {
-      if (currentTemperature != climateTemperature) {
-        debugger
-        setCurrentTemperature(currentTemperature+1);
-      }
-    }, 1000)
-  }, [climateTemperature]);
+    if (currentTemperature !== climateTemperature) {
+      setTimeout(() => {
+        if (currentTemperature > climateTemperature){
+          setCurrentTemperature(currentTemperature-1);
+        } else {
+          setCurrentTemperature(currentTemperature+1);
+        }
+      }, 1000)
+    }
+  }, [currentTemperature, climateTemperature]);
 
   return (
     <div className="climate-stats">
