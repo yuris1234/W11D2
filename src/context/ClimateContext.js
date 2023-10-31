@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from "react";
 
 export const ClimateContext = createContext();
 
-export const useClimateContext = useContext(ClimateContext);
+export const useClimateContext = () => useContext(ClimateContext);
 
 export const ClimateProvider = (props) => {
     const [climateTemperature, setClimateTemperature] = useState(50);
