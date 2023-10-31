@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 function ClimateStats() {
 
-  const { climateTemperature, setClimateTemperature, climateHumidity, setClimateHumidity } = useClimateContext();
+  const { climateTemperature, setClimateTemperature, climateHumidity, setClimateHumidity, currentTemperature, setCurrentTemperature} = useClimateContext();
 
-  const [currentTemperature, setCurrentTemperature] = useState(50);
+  
   // debugger
 
   
